@@ -19,12 +19,12 @@ class simulator():
 
         option = str(input("시뮬레이팅 데이터베이스 초기화 여부 : (y or n) "))
 
-        if option == 'y' or 'Y':
+        if option == 'y':
             self.simul_reset='reset'
-        elif option =='n' or 'N':
+        elif option =='n':
             self.simul_reset='continue'
         else:
-            print("대/소문자 구분하지 않습니다.")
+            print("소 문자로 입력하여 주시기 바랍니다.")
             exit(1)
 
 

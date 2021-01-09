@@ -4,9 +4,9 @@
 # dart : http://dart.fss.or.kr/
 # 오픈Dart: https://opendart.fss.or.kr/
 # Dart-fss(라이브러리 문서): https://dart-fss.readthedocs.io/en/latest/
-# 예제 쿼리 (2015년도 기준, 0 < 2013영업이익 < 2014영업이익 < 2015영업이익 종목
+# 예제 쿼리 (2019년도 기준, 0 < 2017 당기순이익 < 2018 당기순이익 < 2019 당기순이익 종목
 # ** 촬영 후 아래 쿼리 수정 하였습니다.
-# select * from dart where fs_nm = '재무제표' and bsns_year = '2015' and account_nm ='영업이익' and 0 < bfefrmtrm_amount and bfefrmtrm_amount < frmtrm_amount and frmtrm_amount < thstrm_amount
+# select * from dart where fs_nm = '재무제표' and bsns_year = '2019' and account_nm ='당기순이익' and 0 < bfefrmtrm_amount and bfefrmtrm_amount < frmtrm_amount and frmtrm_amount < thstrm_amount
 
 # (별도, 개별)재무제표 vs 연결재무제표
 # (별도, 개별)재무제표

@@ -275,7 +275,7 @@ class simulator_func_mysql:
             self.invest_min_limit_rate = 0.95
 
         # 절대 모멘텀 / 상대 모멘텀
-        elif self.simul_num in (7,8,9,10,12,13,14) :
+        elif self.simul_num in (7,8,9,10) :
             # 매수 리스트 설정 알고리즘 번호(절대모멘텀 code ver)
             self.db_to_realtime_daily_buy_list_num = 7
             # 매도 리스트 설정 알고리즘 번호(절대모멘텀 code ver)
@@ -332,30 +332,6 @@ class simulator_func_mysql:
                 self.db_to_realtime_daily_buy_list_num = 9
                 # 매도 리스트 설정 알고리즘 번호 (절대모멘텀 query ver + losscut point 추가)
                 self.sell_list_num = 5
-
-            # 실시간 조건 매수
-            elif self.simul_num in (12, 13, 14):
-                self.simul_start_date = "20200101"
-                self.use_min = True
-                # 아침 9시에만 매수를 하고 싶은 경우 True, 9시가 아니어도 매수를 하고 싶은 경우 False(분별 시뮬레이션, trader 적용 가능 / 일별 시뮬레이션은 9시에만 매수, 매도)
-                self.only_nine_buy = False
-                #실시간 조건 매수 옵션 (고급 챕터에서 소개) self.only_nine_buy 옵션을 반드시 False로 설정해야함
-                self.trade_check_num = 1  # 실시간 조건 매수 알고리즘 선택 (1,2,3..)
-                # 특정 거래대금 보다 x배 이상 증가 할 경우 매수
-                self.volume_up = 2
-                #
-                if self.simul_num == 13:
-                    self.trade_check_num = 2
-                    # 매수하는 순간 종목의 최신 종가 보다 1% 이상 오른 경우 사지 않도록 하는 설정(변경 가능)
-                    self.invest_limit_rate = 1.01
-                    # 매수하는 순간 종목의 최신 종가 보다 -2% 이하로 떨어진 경우 사지 않도록 하는 설정(변경 가능)
-                    self.invest_min_limit_rate = 0.98
-
-                # 래리윌리엄스 변동성 돌파 전략
-                elif self.simul_num == 14:
-                    self.trade_check_num = 3
-                    self.rarry_k = 0.5
-
 
         else:
             logger.error(f"입력 하신 {self.simul_num}번 알고리즘에 대한 설정이 없습니다. simulator_func_mysql.py 파일의 variable_setting함수에 알고리즘을 설정해주세요. ")

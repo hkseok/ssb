@@ -28,7 +28,7 @@ real_daily_craw_db_name = "daily_craw"
 real_daily_buy_list_db_name = "daily_buy_list"
 
 # daily_buy_list database를 과거 어떤 시점 부터 만들 것인지 설정 하는 변수
-start_daily_buy_list='20200102'
+start_daily_buy_list='19850104'
 
 # openapi 1회 조회 시 대기 시간(0.2 보다-> 0.3이 안정적)
 TR_REQ_TIME_INTERVAL = 0.3
@@ -40,7 +40,7 @@ TR_REQ_TIME_INTERVAL_LONG = 1
 max_api_call = 999
 
 # dart api key (고급클래스에서 소개)
-dart_api_key = ''
+dart_api_key = '09f8144acc1973b2d9660676d57a1eda5ddbc721'
 
 # etf 사용 여부 (고급클래스에서 소개)
 use_etf = False

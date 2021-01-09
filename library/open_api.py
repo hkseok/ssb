@@ -606,7 +606,7 @@ class open_api(QAxWidget):
         self.ohlcv = defaultdict(list)
 
         self.set_input_value("종목코드", code)
-        self.set_input_value("틱범위", 1)
+        self.set_input_value("틱범위", 15)
         self.set_input_value("수정주가구분", 1)
         self.comm_rq_data("opt10080_req", "opt10080", 0, "1999")
 
@@ -624,7 +624,7 @@ class open_api(QAxWidget):
         while self.remained_data == True:
             time.sleep(TR_REQ_TIME_INTERVAL)
             self.set_input_value("종목코드", code)
-            self.set_input_value("틱범위", 1)
+            self.set_input_value("틱범위", 15)
             # self.set_input_value("기준일자", start)
             self.set_input_value("수정주가구분", 1)
             self.comm_rq_data("opt10080_req", "opt10080", 2, "1999")
@@ -801,8 +801,7 @@ class open_api(QAxWidget):
     # rqname - 사용자 구분 요청 명
     # screen_no - 화면번호[4]
     # acc_no - 계좌번호[10]
-    # order_type - 주문유형 (1:신규매수, 2:신규매도, 3:매수취소, 4:매도취소, 5:매수정정, 6:매도정
-    # 정)
+    # order_type - 주문유형 (1:신규매수, 2:신규매도, 3:매수취소, 4:매도취소, 5:매수정정, 6:매도정정)
     # code, - 주식종목코드
     # quantity – 주문수량
     # price – 주문단가
